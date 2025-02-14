@@ -25,7 +25,11 @@ on:
  # schedule:
  #   - cron: '28 23 * * 6'
   workflow_dispatch:
+  
   workflow_call:
+   secrets:
+       FOD_USER:
+         required: true
 
 jobs:
   Fortify-AST-Scan:
