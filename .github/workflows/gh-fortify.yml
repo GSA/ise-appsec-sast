@@ -30,6 +30,10 @@ on:
    secrets:
        FOD_USER:
          required: true
+       FOD_TENANT:
+         required: true
+       FOD_PASSWORD:
+         required: true
 
 jobs:
   Fortify-AST-Scan:
@@ -62,6 +66,10 @@ jobs:
         with:
           sast-scan: true
         env:
+          #### TODO: remove FOD_RELEASE and pass from caller as Github var,  FOD_RELEASE: tlegette-gsa/IWA-Java-v1.0:main ####
+          #### REMOVE: for now force to test app in GSAH #####
+          FOD_RELEASE: 21473
+          
           ### Required configuration when integrating with Fortify on Demand
           FOD_URL: https://fed.fortifygov.com
           FOD_TENANT: ${{secrets.FOD_TENANT}}
