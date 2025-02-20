@@ -75,7 +75,8 @@ jobs:
           FOD_TENANT: ${{secrets.FOD_TENANT}}
           FOD_USER: ${{secrets.FOD_USER}}
           FOD_PASSWORD: ${{secrets.FOD_PAT}}
-          
+          DO_SETUP: true
+          SETUP_EXTRA_OPTS: --assessment-type "Static+"
           ### TODO: re-enable ###
           #DO_SETUP: true
           #SETUP_EXTRA_OPTS: --assessment-type "Static+"
